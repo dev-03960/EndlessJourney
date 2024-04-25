@@ -7,9 +7,8 @@ import (
 	"net/http"
 	"net/smtp"
 	"os"
-	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
-	"github.com/joho/godotenv"
+
 )
 
 type BookingDetails struct {
@@ -6136,13 +6135,9 @@ func VerifierFun(c *gin.Context) {
 func main() {
 
 	r := gin.Default()
-	err := godotenv.Load()
-	if err != nil {
-		fmt.Println("Error loading .env file:", err)
-		return
-	}
+
 	// CORS middleware
-	r.Use(cors.Default())
+  r.Use(CORSMiddleware())
 
 	// Routes
 	r.POST("/sendCarEmail", sendCarEmailHandler)
@@ -6151,9 +6146,27 @@ func main() {
 	r.POST("/login", VerifierFun)
 
 	// Start server
-	err = r.Run(":8080")
-	if err != nil {
-		fmt.Println("Error starting server:", err)
-		return
+  port := os.Getenv("PORT")
+	if port == "" {
+		port = "8080"
+	}
+	if err := r.Run(":" + port); err != nil {
+		fmt.Printf("error: %s", err)
+	}
+}
+
+func CORSMiddleware() gin.HandlerFunc {
+	return func(c *gin.Context) {
+		c.Writer.Header().Set("Access-Control-Allow-Origin", "*")
+		c.Writer.Header().Set("Access-Control-Allow-Credentials", "true")
+		c.Writer.Header().Set("Access-Control-Allow-Headers", "Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization, accept, origin, Cache-Control, X-Requested-With")
+		c.Writer.Header().Set("Access-Control-Allow-Methods", "POST, OPTIONS, GET, PUT")
+
+		if c.Request.Method == "OPTIONS" {
+			c.AbortWithStatus(204)
+			return
+		}
+
+		c.Next()
 	}
 }
