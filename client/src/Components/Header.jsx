@@ -1,14 +1,15 @@
-import { Fragment, useState, useEffect } from 'react'
-import { Dialog, Disclosure, Popover, Transition } from '@headlessui/react'
+import {  useState, useEffect } from 'react'
+import { Dialog, Popover} from '@headlessui/react'
 import {
   Bars3Icon,
   XMarkIcon,
 } from '@heroicons/react/24/outline'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 const [flag,setFlag] = useState(false);
+const navigate = useNavigate();
   useEffect(()=>{
     if(localStorage.getItem("user") == "admin")
     {
@@ -16,8 +17,8 @@ const [flag,setFlag] = useState(false);
     }
         },[])
         const handleLogout = () =>{
-            localStorage.clear();
-            window.location.reload();
+            localStorage.clear();   
+            navigate("/");    
         }
 
   return (
