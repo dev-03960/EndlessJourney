@@ -1,1 +1,1 @@
-export const pathUrl = 'http://localhost:8080/';
+export const pathUrl = 'https://endlessjourney.onrender.com/';
