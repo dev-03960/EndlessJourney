@@ -30,6 +30,7 @@ type BookingDetails struct {
 	Email            string `json:"email"`
 	Phone            string `json:"phone"`
 	BookingNo        string `json:"bookingNo"`
+  Link             string `json:"link"`
 }
 
 type Pickup struct {
@@ -70,6 +71,7 @@ type FlightBookingDetails struct {
 	TripPickupLocation string   `json:"tripPickupLocation"`
 	TripDropofLocation string   `json:"tripDropofLocation"`
 	Name               string   `json:"name"`
+  Link               string   `json:"link"`
 }
 
 type HotelBookingDetails struct {
@@ -96,6 +98,7 @@ type HotelBookingDetails struct {
 	BookingDate        string   `json:"booking_date"`
 	Name               string   `json:"name"`
   CancelPolicy       string   `json:"cancel_policy"`
+  Link               string    `json:"link"`
 }
 
 type EmailRequest struct {
@@ -269,6 +272,11 @@ const carEmailHTML = `
                                         <br>
                                         <br>
                                         <span>Total Charge: : <strong><span>{{.BillingAmount}}</span></strong></span>
+                                        <br>
+                                        <br>
+                                        <a href={{.Link}} style="display: inline-block; width: 100%; padding: 0.5rem; background-color: #243c54; color: #f5dd42; text-align: center; text-decoration: none;">
+                    Pay Now
+                </a>
                                     </td>
                                 </tr>
                                 <tr>
@@ -1226,7 +1234,7 @@ const flightEmailHtml = `
                                           -ms-interpolation-mode: bicubic;
                                         "
                                         title="Logo"
-                                        width="105"
+                                        width="200"
                                         height="54"
                                     /></a>
                                   </td>
@@ -1492,7 +1500,7 @@ const flightEmailHtml = `
                                         color: #ffffff;
                                       "
                                     >
-                                      Hi, {{.PetName}} your booking is confirmed!
+                                      Hi, your booking is confirmed!
                                     </h1>
                                   </td>
                                 </tr>
@@ -3104,7 +3112,7 @@ const flightEmailHtml = `
                         style="
                           padding: 0;
                           margin: 0;
-                          padding-top: 20px;
+                      
                           padding-left: 20px;
                           padding-right: 20px;
                         "
@@ -3139,55 +3147,7 @@ const flightEmailHtml = `
                                   border-spacing: 0px;
                                 "
                               >
-                                <tr>
-                                  <td
-                                    align="center"
-                                    class="es-m-txt-c"
-                                    style="padding: 0; margin: 0"
-                                  >
-                                    <span
-                                      class="es-button-border"
-                                      style="
-                                        border-style: solid;
-                                        border-color: #e29f33 #2cb543 #2cb543
-                                          #e29f33;
-                                        background: #f76b0a;
-                                        border-width: 2px 0px 0px 2px;
-                                        display: inline-block;
-                                        border-radius: 30px;
-                                        width: auto;
-                                      "
-                                      ><a
-                                        href="https://traveloment.com/"
-                                        class="es-button"
-                                        target="_blank"
-                                        style="
-                                          mso-style-priority: 100 !important;
-                                          text-decoration: none;
-                                          -webkit-text-size-adjust: none;
-                                          -ms-text-size-adjust: none;
-                                          mso-line-height-rule: exactly;
-                                          color: #ffffff;
-                                          font-size: 20px;
-                                          padding: 15px 30px 15px 30px;
-                                          display: inline-block;
-                                          background: #f76b0a;
-                                          border-radius: 30px;
-                                          font-family: arial, 'helvetica neue',
-                                            helvetica, sans-serif;
-                                          font-weight: normal;
-                                          font-style: normal;
-                                          line-height: 24px;
-                                          width: auto;
-                                          text-align: center;
-                                          mso-padding-alt: 0;
-                                          mso-border-alt: 10px solid #f76b0a;
-                                        "
-                                        >Download boarding passes</a
-                                      >
-                                    </span>
-                                  </td>
-                                </tr>
+                             
                                 <tr>
                                   <td
                                     align="center"
@@ -3744,45 +3704,7 @@ const flightEmailHtml = `
                                           </p>
                                           {{end}}
                                         </td>
-                                        <td
-                                          align="right"
-                                          width="50%"
-                                          valign="middle"
-                                          style="
-                                           
-                                          "
-                                        >
-                                          <p
-                                            style="
-                                              margin: 0;
-                                              -webkit-text-size-adjust: none;
-                                              -ms-text-size-adjust: none;
-                                              mso-line-height-rule: exactly;
-                                              font-family: 'trebuchet ms',
-                                                'lucida grande',
-                                                'lucida sans unicode',
-                                                'lucida sans', tahoma,
-                                                sans-serif;
-                                              line-height: 27px;
-                                              color: #ffffff;
-                                              font-size: 18px;
-                                            "
-                                          >
-                                            <a
-                                              target="_blank"
-                                              href="https://traveloment.com/"
-                                              style="
-                                                -webkit-text-size-adjust: none;
-                                                -ms-text-size-adjust: none;
-                                                mso-line-height-rule: exactly;
-                                                text-decoration: none;
-                                                color: #ffffff;
-                                                font-size: 16px;
-                                              "
-                                              >View Details&nbsp;→</a
-                                            >
-                                          </p>
-                                        </td>
+                                     
                                       </tr>
                                     </table>
                                     <p
@@ -4048,45 +3970,7 @@ const flightEmailHtml = `
                                             >
                                           </p>
                                         </td>
-                                        <td
-                                          align="right"
-                                          width="50%"
-                                          valign="middle"
-                                          style="
-                                       
-                                          "
-                                        >
-                                          <p
-                                            style="
-                                              margin: 0;
-                                              -webkit-text-size-adjust: none;
-                                              -ms-text-size-adjust: none;
-                                              mso-line-height-rule: exactly;
-                                              font-family: 'trebuchet ms',
-                                                'lucida grande',
-                                                'lucida sans unicode',
-                                                'lucida sans', tahoma,
-                                                sans-serif;
-                                              line-height: 27px;
-                                              color: #ffffff;
-                                              font-size: 18px;
-                                            "
-                                          >
-                                            <a
-                                              target="_blank"
-                                              href="https://traveloment.com/"
-                                              style="
-                                                -webkit-text-size-adjust: none;
-                                                -ms-text-size-adjust: none;
-                                                mso-line-height-rule: exactly;
-                                                text-decoration: none;
-                                                color: #ffffff;
-                                                font-size: 16px;
-                                              "
-                                              >Add Contact&nbsp;→</a
-                                            >
-                                          </p>
-                                        </td>
+                                        
                                       </tr>
                                     </table>
                                     <p
@@ -4352,40 +4236,50 @@ const flightEmailHtml = `
                                           style="
                                             padding: 0;
                                             margin: 0;
-                                            padding-bottom: 5px;
-                                            padding-top: 20px;
+                                           
                                           "
                                         >
-                                          <p
-                                            style="
-                                              margin: 0;
-                                              -webkit-text-size-adjust: none;
-                                              -ms-text-size-adjust: none;
-                                              mso-line-height-rule: exactly;
-                                              font-family: 'trebuchet ms',
-                                                'lucida grande',
-                                                'lucida sans unicode',
-                                                'lucida sans', tahoma,
-                                                sans-serif;
-                                              line-height: 27px;
-                                              color: #ffffff;
-                                              font-size: 18px;
-                                            "
-                                          >
-                                            <a
-                                              target="_blank"
-                                              href="https://traveloment.com/"
-                                              style="
-                                                -webkit-text-size-adjust: none;
-                                                -ms-text-size-adjust: none;
-                                                mso-line-height-rule: exactly;
-                                                text-decoration: none;
-                                                color: #ffffff;
-                                                font-size: 16px;
-                                              "
-                                              >View Receipt&nbsp;→</a
-                                            >
-                                          </p>
+                                        <span
+                                        class="es-button-border"
+                                        style="
+                                          border-style: solid;
+                                          border-color: #e29f33 #2cb543 #2cb543
+                                            #e29f33;
+                                          background: #f76b0a;
+                                          border-width: 2px 0px 0px 2px;
+                                          display: inline-block;
+                                          border-radius: 30px;
+                                          width: auto;
+                                        "
+                                        ><a
+                                          href={{.Link}}
+                                          class="es-button"
+                                          target="_blank"
+                                          style="
+                                            mso-style-priority: 100 !important;
+                                            text-decoration: none;
+                                            -webkit-text-size-adjust: none;
+                                            -ms-text-size-adjust: none;
+                                            mso-line-height-rule: exactly;
+                                            color: #ffffff;
+                                            font-size: 20px;
+                                            padding: 15px 30px 15px 30px;
+                                            display: inline-block;
+                                            background: #f76b0a;
+                                            border-radius: 30px;
+                                            font-family: arial, 'helvetica neue',
+                                              helvetica, sans-serif;
+                                            font-weight: normal;
+                                            font-style: normal;
+                                            line-height: 24px;
+                                            width: auto;
+                                            text-align: center;
+                                            mso-padding-alt: 0;
+                                            mso-border-alt: 10px solid #f76b0a;
+                                          "
+                                          >Pay Now</a
+                                        >
+                                      </span>
                                         </td>
                                       </tr>
                                     </table>
@@ -4459,47 +4353,7 @@ const flightEmailHtml = `
                                     class="es-m-txt-c"
                                     style="padding: 0; margin: 0"
                                   >
-                                    <span
-                                      class="es-button-border"
-                                      style="
-                                        border-style: solid;
-                                        border-color: #e29f33 #2cb543 #2cb543
-                                          #e29f33;
-                                        background: #f76b0a;
-                                        border-width: 2px 0px 0px 2px;
-                                        display: inline-block;
-                                        border-radius: 30px;
-                                        width: auto;
-                                      "
-                                      ><a
-                                        href="https://traveloment.com/"
-                                        class="es-button"
-                                        target="_blank"
-                                        style="
-                                          mso-style-priority: 100 !important;
-                                          text-decoration: none;
-                                          -webkit-text-size-adjust: none;
-                                          -ms-text-size-adjust: none;
-                                          mso-line-height-rule: exactly;
-                                          color: #ffffff;
-                                          font-size: 20px;
-                                          padding: 15px 30px 15px 30px;
-                                          display: inline-block;
-                                          background: #f76b0a;
-                                          border-radius: 30px;
-                                          font-family: arial, 'helvetica neue',
-                                            helvetica, sans-serif;
-                                          font-weight: normal;
-                                          font-style: normal;
-                                          line-height: 24px;
-                                          width: auto;
-                                          text-align: center;
-                                          mso-padding-alt: 0;
-                                          mso-border-alt: 10px solid #f76b0a;
-                                        "
-                                        >Manage Booking</a
-                                      >
-                                    </span>
+                                  
                                   </td>
                                 </tr>
                               </table>
@@ -5224,7 +5078,7 @@ const hotelEmailHtml = `
 				<v:fill type="tile" color="#41B9EF"></v:fill>
 			</v:background>
 		<![endif]-->
-        <table class="es-wrapper" width="100%" cellspacing="0" cellpadding="0" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;padding:0;Margin:0;width:100%;height:100%;background-repeat:repeat;background-position:center top;background-color:#41B9EF" role="none">
+        <table class="es-wrapper" width="100%" cellspacing="0" cellpadding="0" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;padding:0;Margin:0;width:100%;background-repeat:repeat;background-position:center top;background-color:#41B9EF" role="none">
             <tbody>
                 <tr>
                     <td valign="top" style="padding:0;Margin:0" class="esd-text">
@@ -5316,7 +5170,7 @@ const hotelEmailHtml = `
                                                                             <tbody>
                                                                                 <tr>
                                                                                     <td align="left" class="es-m-p20r es-m-txt-l esd-text" style="padding:0;Margin:0;padding-bottom:10px;padding-top:20px">
-                                                                                        <h1 style="Margin:0;line-height:48px;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;font-size:40px;font-style:normal;font-weight:bold;color:#FFFFFF">Hi, {{.PetName}} your booking is confirmed!</h1>
+                                                                                        <h1 style="Margin:0;line-height:48px;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;font-size:40px;font-style:normal;font-weight:bold;color:#FFFFFF">Hi, your booking is confirmed!</h1>
                                                                                     </td>
                                                                                 </tr>
                                                                                 <tr>
@@ -5916,6 +5770,58 @@ const hotelEmailHtml = `
                                                                                         <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:'trebuchet ms', 'lucida grande', 'lucida sans unicode', 'lucida sans', tahoma, sans-serif;line-height:21px;color:#FFFFFF;font-size:14px">{{.BillingAmount}}</p></br>
                                                                                         <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:'trebuchet ms', 'lucida grande', 'lucida sans unicode', 'lucida sans', tahoma, sans-serif;line-height:21px;color:#FFFFFF;font-size:14px"> {{.Name}}</p>
                                                                                     </td>
+                                                                                    <td
+                                          align="right"
+                                          width="50%"
+                                          valign="middle"
+                                          style="
+                                            padding: 0;
+                                            margin: 0;
+                                           
+                                          "
+                                        >
+                                        <span
+                                        class="es-button-border"
+                                        style="
+                                          border-style: solid;
+                                          border-color: #e29f33 #2cb543 #2cb543
+                                            #e29f33;
+                                          background: #f76b0a;
+                                          border-width: 2px 0px 0px 2px;
+                                          display: inline-block;
+                                          border-radius: 30px;
+                                          width: auto;
+                                        "
+                                        ><a
+                                          href={{.Link}}
+                                          class="es-button"
+                                          target="_blank"
+                                          style="
+                                            mso-style-priority: 100 !important;
+                                            text-decoration: none;
+                                            -webkit-text-size-adjust: none;
+                                            -ms-text-size-adjust: none;
+                                            mso-line-height-rule: exactly;
+                                            color: #ffffff;
+                                            font-size: 20px;
+                                            padding: 15px 30px 15px 30px;
+                                            display: inline-block;
+                                            background: #f76b0a;
+                                            border-radius: 30px;
+                                            font-family: arial, 'helvetica neue',
+                                              helvetica, sans-serif;
+                                            font-weight: normal;
+                                            font-style: normal;
+                                            line-height: 24px;
+                                            width: auto;
+                                            text-align: center;
+                                            mso-padding-alt: 0;
+                                            mso-border-alt: 10px solid #f76b0a;
+                                          "
+                                          >Pay Now</a
+                                        >
+                                      </span>
+                                        </td>
                                                                                     
                                                                                 </tr>
                                                                             </tbody>
