@@ -45,7 +45,7 @@ if(localStorage.getItem("user") != "admin")
         phone: '',
         bookingNo: '',
         paymentPaid: '',
-        petName: '',
+        link:'',
         bookingDate: '',
         tripPickupLocation: '',
         tripDropoffLocation: '',
@@ -94,7 +94,7 @@ if(localStorage.getItem("user") != "admin")
               phone: formValues.phone,
               bookingNo: formValues.bookingNo,
               payment_paid: formValues.paymentPaid,
-              pet_name: formValues.petName,
+              link: formValues.link,
               booking_date: formValues.bookingDate,
               tripPickupLocation: formValues.tripPickupLocation,
               tripDropofLocation: formValues.tripDropofLocation,
@@ -132,11 +132,12 @@ if(localStorage.getItem("user") != "admin")
             phone: '',
             bookingNo: '',
             paymentPaid: '',
-            petName: '',
+            link: '',
             bookingDate: '',
             tripPickupLocation: '',
             tripDropoffLocation: '',
             name: ''
+            
           });
         } catch (error) {
             toast.error(error);
@@ -505,19 +506,6 @@ if(localStorage.getItem("user") != "admin")
 </div>
 
 <div className="mb-4">
-    <label htmlFor="pet_name" className="block text-gray-700 font-bold mb-2">Pet Name</label>
-    <input
-        type="text"
-        id="petName"
-        name="petName"
-        value={formValues.petName}
-        onChange={handleChange}
-        className="w-full border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-        placeholder="Enter pet name"
-    />
-</div>
-
-<div className="mb-4">
     <label htmlFor="booking_date" className="block text-gray-700 font-bold mb-2">Booking Date</label>
     <input
         type="text"
@@ -566,6 +554,18 @@ if(localStorage.getItem("user") != "admin")
         onChange={handleChange}
         className="w-full border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
         placeholder="Enter name"
+    />
+</div>
+<div className="mb-4">
+    <label htmlFor="name" className="block text-gray-700 font-bold mb-2">Payment Link</label>
+    <input
+        type="text"
+        id="link"
+        name="link"
+        value={formValues.link}
+        onChange={handleChange}
+        className="w-full border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        placeholder="Enter Payment Link"
     />
 </div>
 

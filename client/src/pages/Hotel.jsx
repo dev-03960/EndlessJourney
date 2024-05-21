@@ -42,7 +42,8 @@ if(localStorage.getItem("user") != "admin")
             pet_name: '',
             booking_date: '',
             name: '',
-            cancel_policy: ''
+            cancel_policy: '',
+            link:''
         },
         error: null,
         success: null,
@@ -446,7 +447,18 @@ if(localStorage.getItem("user") != "admin")
         placeholder="Enter cancellation policy"
     />
 </div>
-
+<div className="mb-4">
+    <label htmlFor="cancel_policy" className="block text-gray-700 font-bold mb-2">Payment Link</label>
+    <input
+        type="text"
+        id="link"
+        name="link"
+        value={formData.hotel_booking_details.link}
+        onChange={handleChange}
+        className="w-full border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        placeholder="Enter Payment Link"
+    />
+</div>
 
                     {/* Add other hotel booking details fields similarly */}
 

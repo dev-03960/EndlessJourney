@@ -37,7 +37,8 @@ if(localStorage.getItem("user") != "admin")
       name: '',
       email: '',
       phone: '',
-      bookingNo: ''
+      bookingNo: '',
+      link: ''
     },
     error: null,
     success: null,
@@ -378,6 +379,20 @@ if(localStorage.getItem("user") != "admin")
     onChange={handleChange}
     className="w-full border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
     placeholder="Enter booking number"
+  />
+</div>
+<div className="mb-4">
+  <label htmlFor="bookingNo" className="block text-gray-700 font-bold mb-2">
+    Payment Link
+  </label>
+  <input
+    type="text"
+    id="link"
+    name="link"
+    value={formData.booking_details.link}
+    onChange={handleChange}
+    className="w-full border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+    placeholder="Enter Payment Link"
   />
 </div>
 
