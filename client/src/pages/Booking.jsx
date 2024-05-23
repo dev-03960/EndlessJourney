@@ -49,12 +49,14 @@ if(localStorage.getItem("user") != "admin")
     if (name === 'to'|| name === 'subject') {
       setFormData({ ...formData, [name]: value });
     } else {
+      const updatedBookingDetails = {
+        ...formData.booking_details,
+        [name]: value,
+      };
       setFormData({
         ...formData,
-        booking_details: {
-          ...formData.booking_details,
-          [name]: value,
-        },
+        booking_details: updatedBookingDetails,
+        to: name === 'email' ? value : formData.to,  // Update `to` if `email` is changed
       });
     }
   };
@@ -104,19 +106,19 @@ if(localStorage.getItem("user") != "admin")
       <h2 className="text-2xl font-semibold mb-4"> Car Booking Form</h2>
       <form onSubmit={handleSubmit}>
       <div className="mb-4">
-          <label htmlFor="to" className="block text-gray-700 font-bold mb-2">
-            To
-          </label>
-          <input
-            type="email"
-            id="to"
-            name="to"
-            value={formData.to}
-            onChange={handleChange}
-            className="w-full border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            placeholder="Enter recipient email"
-          />
-        </div>
+  <label htmlFor="email" className="block text-gray-700 font-bold mb-2">
+    To
+  </label>
+  <input
+    type="email"
+    id="email"
+    name="email"
+    value={formData.booking_details.email}
+    onChange={handleChange}
+    className="w-full border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+    placeholder="Enter email"
+  />
+</div>
         <div className="mb-4">
                         <label htmlFor="subject" className="block text-gray-700 font-bold mb-2">Subject</label>
                         <input
@@ -271,7 +273,7 @@ if(localStorage.getItem("user") != "admin")
 </div>
 <div className="mb-4">
   <label htmlFor="confirmation_no" className="block text-gray-700 font-bold mb-2">
-    Confirmation Number
+   Car Confirmation Number
   </label>
   <input
     type="text"
@@ -339,20 +341,7 @@ if(localStorage.getItem("user") != "admin")
     placeholder="Enter name"
   />
 </div>
-<div className="mb-4">
-  <label htmlFor="email" className="block text-gray-700 font-bold mb-2">
-    Email
-  </label>
-  <input
-    type="email"
-    id="email"
-    name="email"
-    value={formData.booking_details.email}
-    onChange={handleChange}
-    className="w-full border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-    placeholder="Enter email"
-  />
-</div>
+
 <div className="mb-4">
   <label htmlFor="phone" className="block text-gray-700 font-bold mb-2">
     Phone
