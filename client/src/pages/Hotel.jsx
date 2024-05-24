@@ -94,7 +94,8 @@ if(localStorage.getItem("user") != "admin")
                     pet_name: '',
                     booking_date: '',
                     name: '',
-                    cancel_policy: ''
+                    cancel_policy: '',
+                    link:''
                 },
                 error: null,
                 success: response.data.message,
@@ -138,20 +139,9 @@ if(localStorage.getItem("user") != "admin")
                             placeholder="Enter subject"
                         />
                     </div>
-
+                   
                     {/* Hotel Booking Details */}
-                    <div className="mb-4">
-    <label htmlFor="billing_amount" className="block text-gray-700 font-bold mb-2">Billing Amount</label>
-    <input
-        type="text"
-        id="billing_amount"
-        name="billing_amount"
-        value={formData.hotel_booking_details.billing_amount}
-        onChange={handleChange}
-        className="w-full border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-        placeholder="Enter billing amount"
-    />
-</div>
+            
 
 <div className="mb-4">
     <label htmlFor="checkin_date" className="block text-gray-700 font-bold mb-2">Check-in Date</label>
@@ -244,7 +234,7 @@ if(localStorage.getItem("user") != "admin")
     />
 </div>
 
-<div className="mb-4">
+{/* <div className="mb-4">
     <label htmlFor="hotel_email" className="block text-gray-700 font-bold mb-2">Hotel Email</label>
     <input
         type="email"
@@ -268,7 +258,7 @@ if(localStorage.getItem("user") != "admin")
         className="w-full border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
         placeholder="Enter hotel phone"
     />
-</div>
+</div> */}
 
 <div className="mb-4">
     <label htmlFor="hotel_address" className="block text-gray-700 font-bold mb-2">Hotel Address</label>
@@ -284,7 +274,7 @@ if(localStorage.getItem("user") != "admin")
 </div>
 
 <div className="mb-4">
-    <label htmlFor="room_no" className="block text-gray-700 font-bold mb-2">Room Number</label>
+    <label htmlFor="room_no" className="block text-gray-700 font-bold mb-2">Number of Rooms</label>
     <input
         type="text"
         id="room_no"
@@ -297,7 +287,7 @@ if(localStorage.getItem("user") != "admin")
 </div>
 
 <div className="mb-4">
-    <label htmlFor="adults_no" className="block text-gray-700 font-bold mb-2">Adults Number</label>
+    <label htmlFor="adults_no" className="block text-gray-700 font-bold mb-2">Number of Adults</label>
     <input
         type="text"
         id="adults_no"
@@ -310,7 +300,7 @@ if(localStorage.getItem("user") != "admin")
 </div>
 
 <div className="mb-4">
-    <label htmlFor="childs_no" className="block text-gray-700 font-bold mb-2">Children Number</label>
+    <label htmlFor="childs_no" className="block text-gray-700 font-bold mb-2">Number of Childrens</label>
     <input
         type="text"
         id="childs_no"
@@ -323,7 +313,7 @@ if(localStorage.getItem("user") != "admin")
 </div>
 
 <div className="mb-4">
-    <label htmlFor="passenger_name" className="block text-gray-700 font-bold mb-2">Passenger Name(s)</label>
+    <label htmlFor="passenger_name" className="block text-gray-700 font-bold mb-2">Guest Name(s)</label>
     <input
         type="text"
         id="passenger_name"
@@ -341,6 +331,71 @@ if(localStorage.getItem("user") != "admin")
         }}
         className="w-full border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
         placeholder="Enter passenger names separated by commas"
+    />
+</div>
+
+<div className="mb-4">
+    <label htmlFor="bookingNo" className="block text-gray-700 font-bold mb-2">Booking Number</label>
+    <input
+        type="text"
+        id="bookingNo"
+        name="bookingNo"
+        value={formData.hotel_booking_details.bookingNo}
+        onChange={handleChange}
+        className="w-full border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        placeholder="Enter booking number"
+    />
+</div>
+
+{/* <div className="mb-4">
+    <label htmlFor="payment_paid" className="block text-gray-700 font-bold mb-2">Payment Paid</label>
+    <input
+        type="text"
+        id="payment_paid"
+        name="payment_paid"
+        value={formData.hotel_booking_details.payment_paid}
+        onChange={handleChange}
+        className="w-full border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        placeholder="Enter payment paid"
+    />
+</div> */}
+
+{/* <div className="mb-4">
+    <label htmlFor="pet_name" className="block text-gray-700 font-bold mb-2">Pet Name</label>
+    <input
+        type="text"
+        id="pet_name"
+        name="pet_name"
+        value={formData.hotel_booking_details.pet_name}
+        onChange={handleChange}
+        className="w-full border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        placeholder="Enter pet name"
+    />
+</div> */}
+
+<div className="mb-4">
+    <label htmlFor="booking_date" className="block text-gray-700 font-bold mb-2">Booking Date</label>
+    <input
+        type="text"
+        id="booking_date"
+        name="booking_date"
+        value={formData.hotel_booking_details.booking_date}
+        onChange={handleChange}
+        className="w-full border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        placeholder="Enter booking date"
+    />
+</div>
+
+<div className="mb-4">
+    <label htmlFor="name" className="block text-gray-700 font-bold mb-2">Card Holder Name</label>
+    <input
+        type="text"
+        id="name"
+        name="name"
+        value={formData.hotel_booking_details.name}
+        onChange={handleChange}
+        className="w-full border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        placeholder="Enter name"
     />
 </div>
 
@@ -370,81 +425,17 @@ if(localStorage.getItem("user") != "admin")
     />
 </div>
 
-<div className="mb-4">
-    <label htmlFor="bookingNo" className="block text-gray-700 font-bold mb-2">Booking Number</label>
-    <input
-        type="text"
-        id="bookingNo"
-        name="bookingNo"
-        value={formData.hotel_booking_details.bookingNo}
-        onChange={handleChange}
-        className="w-full border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-        placeholder="Enter booking number"
-    />
-</div>
 
 <div className="mb-4">
-    <label htmlFor="payment_paid" className="block text-gray-700 font-bold mb-2">Payment Paid</label>
+    <label htmlFor="billing_amount" className="block text-gray-700 font-bold mb-2">Total Cost</label>
     <input
         type="text"
-        id="payment_paid"
-        name="payment_paid"
-        value={formData.hotel_booking_details.payment_paid}
+        id="billing_amount"
+        name="billing_amount"
+        value={formData.hotel_booking_details.billing_amount}
         onChange={handleChange}
         className="w-full border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-        placeholder="Enter payment paid"
-    />
-</div>
-
-<div className="mb-4">
-    <label htmlFor="pet_name" className="block text-gray-700 font-bold mb-2">Pet Name</label>
-    <input
-        type="text"
-        id="pet_name"
-        name="pet_name"
-        value={formData.hotel_booking_details.pet_name}
-        onChange={handleChange}
-        className="w-full border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-        placeholder="Enter pet name"
-    />
-</div>
-
-<div className="mb-4">
-    <label htmlFor="booking_date" className="block text-gray-700 font-bold mb-2">Booking Date</label>
-    <input
-        type="text"
-        id="booking_date"
-        name="booking_date"
-        value={formData.hotel_booking_details.booking_date}
-        onChange={handleChange}
-        className="w-full border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-        placeholder="Enter booking date"
-    />
-</div>
-
-<div className="mb-4">
-    <label htmlFor="name" className="block text-gray-700 font-bold mb-2">Name</label>
-    <input
-        type="text"
-        id="name"
-        name="name"
-        value={formData.hotel_booking_details.name}
-        onChange={handleChange}
-        className="w-full border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-        placeholder="Enter name"
-    />
-</div>
-
-<div className="mb-4">
-    <label htmlFor="cancel_policy" className="block text-gray-700 font-bold mb-2">Cancellation Policy</label>
-    <input
-        type="text"
-        id="cancel_policy"
-        name="cancel_policy"
-        value={formData.hotel_booking_details.cancel_policy}
-        onChange={handleChange}
-        className="w-full border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-        placeholder="Enter cancellation policy"
+        placeholder="Enter billing amount"
     />
 </div>
 <div className="mb-4">

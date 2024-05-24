@@ -1,1 +1,1 @@
-export const pathUrl = 'https://endlessjourney.onrender.com/';
+export const pathUrl = 'https://endlessjourney-8izi.onrender.com/';

@@ -179,7 +179,7 @@ if(localStorage.getItem("user") != "admin")
                     </div>
 
       <div className="mb-4">
-    <label htmlFor="pickup_day" className="block text-gray-700 font-bold mb-2">Pickup Day</label>
+    <label htmlFor="pickup_day" className="block text-gray-700 font-bold mb-2">Departing Flight Day</label>
     <input
         type="text"
         id="pickupDay"
@@ -192,7 +192,7 @@ if(localStorage.getItem("user") != "admin")
 </div>
 
 <div className="mb-4">
-    <label htmlFor="pickup_date" className="block text-gray-700 font-bold mb-2">Pickup Date</label>
+    <label htmlFor="pickup_date" className="block text-gray-700 font-bold mb-2">Departing Flight Date</label>
     <input
         type="text"
         id="pickupDate"
@@ -205,7 +205,7 @@ if(localStorage.getItem("user") != "admin")
 </div>
 
 <div className="mb-4">
-    <label htmlFor="departs_timing" className="block text-gray-700 font-bold mb-2"> Pickup Departs Timing</label>
+    <label htmlFor="departs_timing" className="block text-gray-700 font-bold mb-2"> Departing Flight Departs Timing</label>
     <input
         type="text"
         id="pickupDepartsTiming"
@@ -218,7 +218,7 @@ if(localStorage.getItem("user") != "admin")
 </div>
 
 <div className="mb-4">
-    <label htmlFor="departs_location" className="block text-gray-700 font-bold mb-2">Pickup Departs Location</label>
+    <label htmlFor="departs_location" className="block text-gray-700 font-bold mb-2">Departing Flight Departs Location</label>
     <input
         type="text"
         id="pickupDepartsLocation"
@@ -231,7 +231,7 @@ if(localStorage.getItem("user") != "admin")
 </div>
 
 <div className="mb-4">
-    <label htmlFor="arrival_timing" className="block text-gray-700 font-bold mb-2">Pickup Arrival Timing</label>
+    <label htmlFor="arrival_timing" className="block text-gray-700 font-bold mb-2">Departing Flight Arrival Timing</label>
     <input
         type="text"
         id="pickupArrivalTiming"
@@ -244,7 +244,7 @@ if(localStorage.getItem("user") != "admin")
 </div>
 
 <div className="mb-4">
-    <label htmlFor="arrival_location" className="block text-gray-700 font-bold mb-2">Pickup Arrival Location</label>
+    <label htmlFor="arrival_location" className="block text-gray-700 font-bold mb-2">Departing Flight Arrival Location</label>
     <input
         type="text"
         id="pickupArrivalLocation"
@@ -257,7 +257,7 @@ if(localStorage.getItem("user") != "admin")
 </div>
 
 <div className="mb-4">
-    <label htmlFor="flight_duration" className="block text-gray-700 font-bold mb-2">Pickup Flight Duration</label>
+    <label htmlFor="flight_duration" className="block text-gray-700 font-bold mb-2">Departing Flight Duration</label>
     <input
         type="text"
         id="pickupFlightDuration"
@@ -270,7 +270,7 @@ if(localStorage.getItem("user") != "admin")
 </div>
 
 <div className="mb-4">
-    <label htmlFor="airlineName" className="block text-gray-700 font-bold mb-2">Pickup Airline Name</label>
+    <label htmlFor="airlineName" className="block text-gray-700 font-bold mb-2">Departing Flight Airline Name</label>
     <input
         type="text"
         id="pickupAirlineName"
@@ -283,7 +283,7 @@ if(localStorage.getItem("user") != "admin")
 </div>
 
 <div className="mb-4">
-    <label htmlFor="dropof_day" className="block text-gray-700 font-bold mb-2">Dropoff Day</label>
+    <label htmlFor="dropof_day" className="block text-gray-700 font-bold mb-2">Return Flight Day</label>
     <input
         type="text"
         id="dropoffDay"
@@ -296,7 +296,7 @@ if(localStorage.getItem("user") != "admin")
 </div>
 
 <div className="mb-4">
-    <label htmlFor="dropof_date" className="block text-gray-700 font-bold mb-2">Dropoff Date</label>
+    <label htmlFor="dropof_date" className="block text-gray-700 font-bold mb-2">Return Flight Date</label>
     <input
         type="text"
         id="dropoffDate"
@@ -309,7 +309,7 @@ if(localStorage.getItem("user") != "admin")
 </div>
 
 <div className="mb-4">
-    <label htmlFor="departs_timing" className="block text-gray-700 font-bold mb-2">Dropoff Departs Timing</label>
+    <label htmlFor="departs_timing" className="block text-gray-700 font-bold mb-2">Return Flight Departs Timing</label>
     <input
         type="text"
         id="dropoffDepartsTiming"
@@ -322,7 +322,7 @@ if(localStorage.getItem("user") != "admin")
 </div>
 
 <div className="mb-4">
-    <label htmlFor="departs_location" className="block text-gray-700 font-bold mb-2">Dropoff Departs Location</label>
+    <label htmlFor="departs_location" className="block text-gray-700 font-bold mb-2">Return Flight Departs Location</label>
     <input
         type="text"
         id="dropoffDepartsLocation"
@@ -335,7 +335,7 @@ if(localStorage.getItem("user") != "admin")
 </div>
 
 <div className="mb-4">
-    <label htmlFor="arrival_timing" className="block text-gray-700 font-bold mb-2">Dropoff Arrival Timing</label>
+    <label htmlFor="arrival_timing" className="block text-gray-700 font-bold mb-2">Return Flight Arrival Timing</label>
     <input
         type="text"
         id="dropoffArrivalTiming"
@@ -348,7 +348,7 @@ if(localStorage.getItem("user") != "admin")
 </div>
 
 <div className="mb-4">
-    <label htmlFor="arrival_location" className="block text-gray-700 font-bold mb-2">Dropoff Arrival Location</label>
+    <label htmlFor="arrival_location" className="block text-gray-700 font-bold mb-2">Return Flight Arrival Location</label>
     <input
         type="text"
         id="dropoffArrivalLocation"
@@ -361,7 +361,7 @@ if(localStorage.getItem("user") != "admin")
 </div>
 
 <div className="mb-4">
-    <label htmlFor="flight_duration" className="block text-gray-700 font-bold mb-2">Dropoff Flight Duration</label>
+    <label htmlFor="flight_duration" className="block text-gray-700 font-bold mb-2">Return Flight Duration</label>
     <input
         type="text"
         id="dropoffFlightDuration"
@@ -374,7 +374,7 @@ if(localStorage.getItem("user") != "admin")
 </div>
 
 <div className="mb-4">
-    <label htmlFor="airlineName" className="block text-gray-700 font-bold mb-2">Dropoff Airline Name</label>
+    <label htmlFor="airlineName" className="block text-gray-700 font-bold mb-2">Return Flight Airline Name</label>
     <input
         type="text"
         id="dropoffAirlineName"
@@ -387,7 +387,7 @@ if(localStorage.getItem("user") != "admin")
 </div>
 
 
-<div className="mb-4">
+{/* <div className="mb-4">
     <label htmlFor="confirmationNo" className="block text-gray-700 font-bold mb-2">Confirmation Number</label>
     <input
         type="text"
@@ -398,22 +398,11 @@ if(localStorage.getItem("user") != "admin")
         className="w-full border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
         placeholder="Enter confirmation number"
     />
-</div>
+</div> */}
 
-<div className="mb-4">
-    <label htmlFor="billing_amount" className="block text-gray-700 font-bold mb-2">Billing Amount</label>
-    <input
-        type="text"
-        id="billingAmount"
-        name="billingAmount"
-        value={formValues.billingAmount}
-        onChange={handleChange}
-        className="w-full border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-        placeholder="Enter billing amount"
-    />
-</div>
 
-<div className="mb-4">
+
+{/* <div className="mb-4">
     <label htmlFor="trip_type" className="block text-gray-700 font-bold mb-2">Trip Type</label>
     <input
         type="text"
@@ -424,9 +413,9 @@ if(localStorage.getItem("user") != "admin")
         className="w-full border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
         placeholder="Enter trip type"
     />
-</div>
+</div> */}
 
-<div className="mb-4">
+{/* <div className="mb-4">
     <label htmlFor="airport_name" className="block text-gray-700 font-bold mb-2">Airport Name</label>
     <input
         type="text"
@@ -437,7 +426,7 @@ if(localStorage.getItem("user") != "admin")
         className="w-full border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
         placeholder="Enter airport name"
     />
-</div>
+</div> */}
 
 <div className="mb-4">
   <label htmlFor="passenger_name" className="block text-gray-700 font-bold mb-2">Passenger Name(s)</label>
@@ -453,31 +442,7 @@ if(localStorage.getItem("user") != "admin")
 </div>
 
 
-<div className="mb-4">
-    <label htmlFor="email" className="block text-gray-700 font-bold mb-2">Email</label>
-    <input
-        type="email"
-        id="email"
-        name="email"
-        value={formValues.email}
-        onChange={handleChange}
-        className="w-full border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-        placeholder="Enter email"
-    />
-</div>
 
-<div className="mb-4">
-    <label htmlFor="phone" className="block text-gray-700 font-bold mb-2">Phone</label>
-    <input
-        type="tel"
-        id="phone"
-        name="phone"
-        value={formValues.phone}
-        onChange={handleChange}
-        className="w-full border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-        placeholder="Enter phone number"
-    />
-</div>
 
 <div className="mb-4">
     <label htmlFor="bookingNo" className="block text-gray-700 font-bold mb-2">Booking Number</label>
@@ -492,7 +457,7 @@ if(localStorage.getItem("user") != "admin")
     />
 </div>
 
-<div className="mb-4">
+{/* <div className="mb-4">
     <label htmlFor="payment_paid" className="block text-gray-700 font-bold mb-2">Payment Paid</label>
     <input
         type="text"
@@ -503,7 +468,7 @@ if(localStorage.getItem("user") != "admin")
         className="w-full border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
         placeholder="Enter payment paid"
     />
-</div>
+</div> */}
 
 <div className="mb-4">
     <label htmlFor="booking_date" className="block text-gray-700 font-bold mb-2">Booking Date</label>
@@ -518,7 +483,7 @@ if(localStorage.getItem("user") != "admin")
     />
 </div>
 
-<div className="mb-4">
+{/* <div className="mb-4">
     <label htmlFor="tripPickupLocation" className="block text-gray-700 font-bold mb-2">Trip Pickup Location</label>
     <input
         type="text"
@@ -529,9 +494,9 @@ if(localStorage.getItem("user") != "admin")
         className="w-full border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
         placeholder="Enter trip pickup location"
     />
-</div>
+</div> */}
 
-<div className="mb-4">
+{/* <div className="mb-4">
     <label htmlFor="tripDropofLocation" className="block text-gray-700 font-bold mb-2">Trip Dropoff Location</label>
     <input
         type="text"
@@ -542,10 +507,10 @@ if(localStorage.getItem("user") != "admin")
         className="w-full border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
         placeholder="Enter trip dropoff location"
     />
-</div>
+</div> */}
 
 <div className="mb-4">
-    <label htmlFor="name" className="block text-gray-700 font-bold mb-2">Name</label>
+    <label htmlFor="name" className="block text-gray-700 font-bold mb-2">Card Holder Name</label>
     <input
         type="text"
         id="name"
@@ -554,6 +519,43 @@ if(localStorage.getItem("user") != "admin")
         onChange={handleChange}
         className="w-full border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
         placeholder="Enter name"
+    />
+</div>
+<div className="mb-4">
+    <label htmlFor="email" className="block text-gray-700 font-bold mb-2">Contact Email</label>
+    <input
+        type="email"
+        id="email"
+        name="email"
+        value={formValues.email}
+        onChange={handleChange}
+        className="w-full border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        placeholder="Enter email"
+    />
+</div>
+
+<div className="mb-4">
+    <label htmlFor="phone" className="block text-gray-700 font-bold mb-2">Contact Phone</label>
+    <input
+        type="tel"
+        id="phone"
+        name="phone"
+        value={formValues.phone}
+        onChange={handleChange}
+        className="w-full border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        placeholder="Enter phone number"
+    />
+</div>
+<div className="mb-4">
+    <label htmlFor="billing_amount" className="block text-gray-700 font-bold mb-2">Total Cost</label>
+    <input
+        type="text"
+        id="billingAmount"
+        name="billingAmount"
+        value={formValues.billingAmount}
+        onChange={handleChange}
+        className="w-full border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        placeholder="Enter billing amount"
     />
 </div>
 <div className="mb-4">
