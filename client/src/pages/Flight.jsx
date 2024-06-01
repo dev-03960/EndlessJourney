@@ -102,8 +102,8 @@ if(localStorage.getItem("user") != "admin")
             }
           };
       
-          const response = await axios.post(`${pathUrl}sendFightEmail`, payload);
-          toast.success(response.data.message);
+          const response = await axios.post(`${pathUrl}sendFlightEmail`, payload);
+          toast.success("Email sent successfully");
           setFormValues({
             to: '',
             subject: '',
