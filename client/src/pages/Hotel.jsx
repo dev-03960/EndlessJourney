@@ -100,7 +100,7 @@ if(localStorage.getItem("user") != "admin")
                 error: null,
                 success: response.data.message,
             });
-            toast.success(response.data.message);
+            toast.success("Email Sent Successfully");
         } catch (error) {
             setFormData({ ...formData, error: error.response.data.error, success: null });
             toast.error(error);
