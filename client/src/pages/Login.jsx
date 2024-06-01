@@ -3,15 +3,17 @@ import { useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { pathUrl } from '../../config';
+import { RotatingSquare } from 'react-loader-spinner'
 
 const LoginPage = () => {
     const [username, setUserName] = useState("");
     const [password, setPassword] = useState("");
     const [message, setMessage] = useState("");
     const [error, setError] = useState('');
+    const [loader,setloader] = useState(false);
 const navigate = useNavigate();
     const handleSubmit = async (e) => {
-        
+        setloader(true);
       e.preventDefault();
       const response = await fetch(`${pathUrl}login`, {
         method: 'POST',
@@ -20,22 +22,27 @@ const navigate = useNavigate();
         },
         body: JSON.stringify({ username, password }),
       });
+     
       if (response.ok) {
         const data = await response.text();
         navigate("/booking");
         setMessage(data);
         localStorage.setItem("user","admin");
+        setloader(false);
         setError('');
       } else if(response.statusText =="Unauthorized"){
         console.log(response);
         toast.error("Unauthorize user kindly write down the correct password");
+        setloader(false);
       }
       else {
         toast.error(response.statusText);
+        setloader(false);
       }
     };
-
+console.log(loader);
     return (
+       loader  == false ? (
         <>
         <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
             <div className="max-w-md w-full bg-white rounded-lg shadow-lg p-8  space-y-8 ">
@@ -76,6 +83,22 @@ const navigate = useNavigate();
         </div>
         <ToastContainer/>
         </>
+       ):(
+    <div className="flex items-center h-[100vh] justify-center">
+<RotatingSquare
+  visible={loader}
+  height="100"
+  width="100"
+  color="#ffde59"
+  ariaLabel="rotating-square-loading"
+  wrapperStyle={{}}
+  wrapperClass=""
+  />
+    </div>
+
+       )
+        
+       
         
     );
 };
