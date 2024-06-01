@@ -1,1 +1,1 @@
-export const pathUrl = 'https://endlessjourney.onrender.com/';
+export const pathUrl = 'https://backend-n2im.onrender.com/';
