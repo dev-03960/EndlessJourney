@@ -38,7 +38,8 @@ if(localStorage.getItem("user") != "admin")
       email: '',
       phone: '',
       bookingNo: '',
-      link: ''
+      link: '',
+      cancellation_policy:''
     },
     error: null,
     success: null,
@@ -86,7 +87,9 @@ if(localStorage.getItem("user") != "admin")
           name: '',
           email: '',
           phone: '',
-          bookingNo: ''
+          bookingNo: '',
+          link:'',
+          cancellation_policy:''
         },
         error: null,
         success: response.data.message,
@@ -365,6 +368,20 @@ if(localStorage.getItem("user") != "admin")
     id="bookingNo"
     name="bookingNo"
     value={formData.booking_details.bookingNo}
+    onChange={handleChange}
+    className="w-full border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+    placeholder="Enter booking number"
+  />
+</div>
+<div className="mb-4">
+  <label htmlFor="cancellation_policy" className="block text-gray-700 font-bold mb-2">
+    Cancellation Policy
+  </label>
+  <input
+    type="text"
+    id="cancellation_policy"
+    name="cancellation_policy"
+    value={formData.booking_details.cancellation_policy}
     onChange={handleChange}
     className="w-full border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
     placeholder="Enter booking number"
